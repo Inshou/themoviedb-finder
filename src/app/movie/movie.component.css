@@ -1,0 +1,7 @@
+.movie-content{
+    display: flex;
+}
+
+.movie-img{
+    margin-right: 20px;
+}

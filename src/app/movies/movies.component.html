@@ -1,0 +1,18 @@
+<mat-card>
+  <mat-card-title>
+    <form class="search-form">
+        <mat-form-field>
+          <input matInput placeholder="Search..." [(ngModel)]="searchStr" name="searchStr" (keyup.enter)="searchMovies()">
+        </mat-form-field>
+        <button mat-raised-button color="primary" (click)="searchMovies()">Find</button>
+    </form>
+  </mat-card-title>
+  <mat-card-content *ngIf="searchRes">
+      <h3>Search results</h3>
+      <mat-list class="result-list">
+          <div *ngFor="let movie of searchRes; let i = index;">
+            <movie-card [movie]="movie"></movie-card>
+          </div>
+      </mat-list>
+  </mat-card-content>
+</mat-card>
