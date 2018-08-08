@@ -1,5 +1,7 @@
 <mat-card *ngIf="movie">
-  <mat-card-title>{{movie.title}}</mat-card-title>
+  <mat-card-title>
+      {{movie.title}}
+  </mat-card-title>
   <mat-card-content class="movie-content">
     <div class="movie-img">
         <img mat-card-img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="" class="thumbnail">
@@ -15,8 +17,9 @@
           <li *ngFor="let actor of cast">{{actor.name}}</li>
         </ul>
         <p>
-          <a *ngIf="movie.homepage" href="{{movie.homepage}}" class="btn btn-info btn-block" target="_blank">Сайт фильма</a>
+          <a *ngIf="movie.homepage" href="{{movie.homepage}}" target="_blank">Сайт фильма</a>
         </p>
+        <button class="movie-card-button" mat-raised-button color="primary" (click)="saveMovie()">+</button>
         <div class="trailer" *ngIf="video">
             <h4>{{video.name}}</h4>
             <iframe class="embed-responsive-item" [src]="video.url"></iframe>

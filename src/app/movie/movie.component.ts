@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import {MoviesService} from '../movies.service';
+import { MoviesService } from '../movies.service';
 
 @Component({
   selector: 'app-movie',
@@ -42,6 +42,10 @@ export class MovieComponent implements OnInit {
         }
       });
     })
+  }
+
+  saveMovie() {
+    this._moviesServices.saveMovie(this.movie);
   }
 
 }
