@@ -1,0 +1,17 @@
+.movie-list{
+    margin-bottom: 10px;
+}
+.movie-list-link{
+    padding: 5px 0;
+}
+
+.movie-list-button{
+    cursor: pointer;
+    padding: 5px;
+    margin-right: 5px;
+}
+
+.movie-list-button:hover{
+    background-color: #3f51b5;
+    color: #fff;
+}

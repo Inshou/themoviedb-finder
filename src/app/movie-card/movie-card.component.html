@@ -1,5 +1,6 @@
-<mat-card class="thumbnail">
-  <mat-card-title>
+<mat-card class="movie-card">
+  <mat-card-title class="movie-card-title">
     <a routerLink="/movie/{{movie.id}}">{{movie.title}}</a>
   </mat-card-title>
+  <button class="movie-card-button" mat-mini-fab color="primary" (click)="saveMovie()">+</button>
 </mat-card>

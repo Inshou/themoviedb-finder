@@ -5,24 +5,24 @@
         <img mat-card-img src="https://image.tmdb.org/t/p/w500/{{movie.poster_path}}" alt="" class="thumbnail">
     </div>
     <div class="movie-details">
-        <h3>Overview</h3>
+        <h3>Обзор:</h3>
         <p>{{movie.overview}}</p>
-        <p>Vote average: {{movie.vote_average}}</p>
-        <p *ngIf="movie.tagline">Tagline: {{movie.tagline}}</p>
-        <p>Genre: <span *ngFor="let genre of movie.genres">{{genre.name}} </span></p>
-        <p *ngIf="cast">Cast: </p>
+        <p>Средняя оценка: {{movie.vote_average}}</p>
+        <p *ngIf="movie.tagline">Слоган: {{movie.tagline}}</p>
+        <p>Жанры: <span *ngFor="let genre of movie.genres">{{genre.name}} </span></p>
+        <p *ngIf="cast">Актеры: </p>
         <ul *ngIf="cast">
           <li *ngFor="let actor of cast">{{actor.name}}</li>
         </ul>
         <p>
-          <a *ngIf="movie.homepage" href="{{movie.homepage}}" class="btn btn-info btn-block" target="_blank">Visit Movies Website</a>
+          <a *ngIf="movie.homepage" href="{{movie.homepage}}" class="btn btn-info btn-block" target="_blank">Сайт фильма</a>
         </p>
         <div class="trailer" *ngIf="video">
             <h4>{{video.name}}</h4>
             <iframe class="embed-responsive-item" [src]="video.url"></iframe>
         </div>
         <div class="reviews" *ngIf="reviews && reviews.length > 0">
-          <h3>Reviews:</h3>
+          <h3>Рецензии:</h3>
           <div class="review-item" *ngFor="let review of reviews">
               <blockquote>
                 <p>{{review.content}}</p>

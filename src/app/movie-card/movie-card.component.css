@@ -1,3 +1,7 @@
+.movie-card{
+    display: flex;
+    justify-content: space-between;
+}
 .text-ellipsis {
     white-space: nowrap;
     overflow: hidden;

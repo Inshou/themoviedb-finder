@@ -1,0 +1,20 @@
+<mat-card>
+  <mat-card-title>Список фильмов:</mat-card-title>
+  <mat-card-content>
+
+    <!-- Empty block -->
+    <p *ngIf="!this.movieObjects.length > 0">пусто</p>
+    <!-- / Empty block -->
+
+    <div class="movie-list"> 
+      <div class="movie-list-item" *ngFor="let movie of movieObjects; let i = index;">
+        <a class="movie-list-button" (click)="removeMovie(i)">-</a>
+        <a class="movie-list-link" routerLink="/movie/{{movie.id}}">
+          {{ movie.title }}
+        </a>
+      </div>
+    </div>
+
+    <button mat-raised-button color="primary" *ngIf="this.movieObjects.length > 0" (click)="clearStorage()">Очистить</button>
+  </mat-card-content>
+</mat-card>

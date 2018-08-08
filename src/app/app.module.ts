@@ -10,6 +10,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MoviesComponent } from './movies/movies.component';
 import { MovieComponent } from './movie/movie.component';
 import { MovieCardComponent } from './movie-card/movie-card.component';
+import { StorageListComponent } from './storage-list/storage-list.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
     MoviesComponent,
     MovieComponent,
     MovieCardComponent,
+    StorageListComponent
   ],
   imports: [
     BrowserModule,
@@ -25,7 +27,7 @@ import { MovieCardComponent } from './movie-card/movie-card.component';
     FormsModule,
     HttpModule,
     JsonpModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
   ],
   providers: [],
   bootstrap: [AppComponent]
