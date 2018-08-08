@@ -35,8 +35,11 @@ export class StorageListComponent implements OnInit {
   }
 
   clearStorage() {
-    this._movieService.clearStorage();
+    /* Clear stream */
     this.movieObjects = [];
+
+    /* Clear storage */
+    this._movieService.clearStorage();
     this._movieService.getMovies();
   }
 

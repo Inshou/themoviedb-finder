@@ -3,8 +3,14 @@
   <mat-card-title>
     <form class="search-form">
         <mat-form-field>
-          <input matInput placeholder="Поиск..." [(ngModel)]="searchStr" name="searchStr" (keyup.enter)="searchMovies()">
+          <input matInput placeholder="Поиск..." [matAutocomplete]="auto" [(ngModel)]="searchStr" name="searchStr" (keyup)="getMovieTitles()" (keyup.enter)="searchMovies()">
         </mat-form-field>
+        <mat-autocomplete #auto="matAutocomplete">
+          <mat-option *ngFor="let option of searchOptions" [value]="option.title" (click)="searchMovies()">
+            {{ option.title }}
+          </mat-option>
+        </mat-autocomplete>
+
         <button mat-raised-button color="primary" (click)="searchMovies()">Найти</button>
     </form>
   </mat-card-title>
